@@ -1,0 +1,139 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>URK20CS3021_Exp2_WEBPAGE</title>
+        <style type='text/css'>
+            h1 { display: inline}
+        </style>
+    </head>
+    <BODY>
+        <header>
+           <center>
+            <span>
+                <span>
+                    <IMG style="vertical-align:middle" src="books_pic.jpg", alt="Books" width = 100 height = 100></IMG>
+                    <h1>BOOKS AND BANTER</h1>
+                 </span> 
+            </span>
+           </center>            
+        </header>
+
+        <hr>
+        <div>
+            <center>
+                <nav style="padding: 10px">
+                    <a href="#reg" style="text-decoration:none;">&nbsp;Sign in&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+                    <a href="#about" style="text-decoration:none;">About Us&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+                    <a href="#sup" style="text-decoration:none;">Sign up&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+                    <input style="float:right" type="searchbar", type="text", placeholder="Search">
+                </nav>  
+            </center>
+        </div>
+
+        <hr>
+
+
+        <h1 id="about">ABOUT US</h1>
+        <div class="main" style="display:flex;">
+            <section>
+                <video loop="true" autoplay="autoplay" controls="controls" id="vid" muted style="width:97%;">
+                    <source src="read_vid.mp4" type="video/mp4"/>
+                </video>
+            </section>
+            <section>
+                <p>
+                    Losing yourself in a good book is an excellent way to relax! A mini vacation for your brain, reading can help ease tension in your muscles and heart. Find a reading buddy to have beside you during the adventure that you are undergoing!
+                </p>
+                <audio controls autoplay><source src="abstract_aud.mp3" type="audio/mp3"/></audio>
+            </section>
+        </div>
+        <hr>
+        
+        <footer  style="display:flex;">
+            <section class ="left" style="flex:1;">
+                <h1 id="about">SIGN IN</h1>
+                <form id="reg">
+                    <fieldset>
+                        <legend>Sign in</legend>
+                        <br>
+                        <label for="Username" >Username: </label>
+                        <input type="text" placeholder="John Doe"><br><br>
+                        <label for="Password" >Password: </label>
+                        <input type="password" placeholder="something in elvish"><br>
+                        <center><button type="button">Sign in</button></center>
+                    </fieldset>
+                </form>
+            </section>
+            <section class ="center" style="flex:1;">
+                <h2>Contact Us</h2>
+                <p>Address: Karunya Nagar, Coimbatore, Tamil Nadu 641114</p>
+                <p>Email: studdybuddy@company.org</p>
+                <p>Phone Number: 00000 00000</p>
+            </section>
+            <section class ="right" style="flex:1;">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3917.3598133903174!2d76.74187231532582!3d10.936169259213983!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba866bd6aaaaaab%3A0xc650b8a75e7b51f0!2sKarunya%20Institute%20of%20Technology%20and%20Sciences%20(Deemed%20University)!5e0!3m2!1sen!2sin!4v1658730121356!5m2!1sen!2sin" width="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </section>
+        </footer>
+
+        <hr>
+        <section id="sup">
+            <h1>ABOUT YOU</h1>
+            <form>
+                <fieldset>
+                    <legend>
+                        Personal Details
+                    </legend>
+                    <label for="fname">First Name: </label>
+                    <input type="text" id="fname" name="fname"><br><br>
+                    <label for="lname">Last Name: </label>
+                    <input type="text" id="lname" name="lname"><br><br>
+                    <label for="dob">Date of Birth: </label>
+                    <input type="date" id="dob" name="dob"><br><br>
+                    <label for="age">Age: </label>
+                    <input type="number" id="age" name="age"><br><br>
+                    <label for="gender">Gender: </label>
+                    <input type="radio" id="Male" name="gender" value="Male">
+                    <label for="Male">Male</label><br>
+                    <input type="radio" id="Female" name="gender" value="Female">
+                    <label for="Female">Female</label><br><br>
+                </fieldset>
+                <label for="prog1">Progress:</label>
+                <progress id="prog1" value="25" max="100"> 25% </progress>
+                <fieldset>
+                    <legend>
+                        Address Details
+                    </legend>
+                    <label for="address">Address: </label>
+                    <input type="textarea" id="address" name="address"><br><br>
+                    <label for="city">City: </label>
+                    <input type="text" id="city" name="city"><br><br>
+                    <label for="city">State: </label>
+                    <input type="text" id="state" name="state"><br><br>
+                </fieldset>
+                <label for="prog2">Progress:</label>
+                <progress id="prog2" value="50" max="100"> 50% </progress>
+                <fieldset>
+                    <legend>
+                        Contact Information
+                    </legend>
+                    <label for="mobile">Mobile: </label>
+                    <input type="text" id="mobile" name="mobile" placeholder="(+91) 99999-99999"><br><br>
+                    <label for="email">Email: </label>
+                    <input type="email" id="email" name="email" placeholder="me@email.com"><br><br>
+                    <label for="social_link">Social Profile Link: </label>
+                    <input type="url" id="social_link" name="social_link"><br><br>
+                </fieldset>
+                <label for="prog2">Progress:</label>
+                <progress id="prog2" value="75" max="100"> 75% </progress>
+                <fieldset>
+                    <label for="files">Attach your TBR pile(.doc, .pdf file): </label>
+                    <input type="file" id="files" name="files"><br><br>
+                </fieldset>
+                <label for="prog2">Progress:</label>
+                <progress id="prog2" value="100" max="100"> 100% </progress><br><br>
+                <center><button id="bottom">Submit</button></center>
+            </form>
+        </section>
+        <a href="#">Go to top of page.</a>
+    </BODY>
+</html>
