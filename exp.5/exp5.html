@@ -1,0 +1,139 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Exp.5_javascript</title>
+        <meta charset="UTF8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="java_func.js"></script>
+        <style>
+            a{
+                font-family:'Times New Roman', Times, serif; 
+                color: aliceblue;
+                text-decoration: none;
+                font-size: 24px;
+                text-align: center;
+                margin: 2%;
+                padding: 1% 2%;
+                border-radius: 10px;
+            }
+            a:active{
+                background-color: #FFFFFF70;
+                color: #310a0b;
+            }
+            img{
+                width: 100px;
+                height: 100px;
+            }
+        </style>
+    </head>
+    <body>
+        <header style="background-color: #AC7088; padding:20px 5px;">
+            <CENTER>
+                <H1 style="color:aliceblue; font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; font-size: 30px;">EXPERIMENT 5</H1>
+                <a href="#q1">Question. 1</a>
+                <a href="#q2">Question. 2</a>
+                <a href="#q3">Question. 3</a>
+                <a href="#q4">Question. 4</a>
+                <a href="#q5">Question. 5</a>
+                <a href="#q6">Question. 6</a>
+            </CENTER>
+        </header>
+
+        <div id="q1">
+            <h3>Question.1</h3>
+            <fieldset>
+                <legend>Shortest and longest words</legend>
+                Enter the string: <input type="text" placeholder="Write sentence" id="sent"><br>
+                <button onclick="q1()">Find</button>
+                <p>
+                <span id="sh"></span><br/>
+                <span id="ln"></span>
+                </p>
+
+            </fieldset>
+        </div>
+
+        <h3 id="q2">Question.2</h3>
+        <div>
+            <fieldset>
+                <legend>Calculate BMI</legend>
+                Weight (in kilograms): <input type="text" id="weight"/><br/>
+                Height (in meters): <input type="text" id="height"/><br/>
+                <button onclick="q2();">Get BMI!</button>
+                <p>
+                    <span id="score"></span><br/>
+                    <span id="type"></span>
+                </p>
+            </fieldset>
+        </div>
+        
+        <h3 id="q3">Question.3</h3>
+        <div>
+            <fieldset>
+                <legend>Fruit Farm</legend>
+                <div>
+                    <p>Enter the number of rows and columns of plants you want to grow: </p><br>                    
+                    Rows: <input type="text" id ="rows" />
+                    Columns: <input type="text" id ="columns" /> <br />
+                    <button onclick="q3();">Plant Garden</button>
+                </div>
+                <div id="garden"></div>
+        
+            </fieldset>
+        </div>
+
+        <h3 id="q4">Question.4</h3>
+        <div>
+            <legend>Currency Converter</legend>
+            <fieldset> Convert <input type="text" id="data" />
+                <select id="from">
+                <option>Indian Rupee</option>
+                <option>US Dollar</option>
+                </select>
+                to
+                <select id ="to">
+                <option> US Dollar </option>
+                <option> Indian Rupee </option>
+                </select>
+                <button onclick="q4();">Calculate</button> 
+                <br><span id="answer">hahaha</span>
+            </fieldset>
+        </div>
+
+        <h3 id="q5">Question.5</h3>
+        <div>
+            <legend>Heads or Tails</legend>
+            <fieldset>
+                <div>
+                    <img src="heads.png" id="coin" /> <br />
+                    <button id="flip" onclick="q5();">Flip!</button>
+                    </div>
+                    <p>
+                    Heads Total: <span id="num_heads">0</span><br />
+                    Tails Total: <span id="num_tails">0</span>
+                    </p>
+            </fieldset>
+        </div>
+
+        <h3 id="q6">Question.6</h3>
+        <div>
+            <legend>Cake shop</legend>
+            <fieldset>
+                No. of 1/2kg Cakes <input type="text" id="small" /><br/><br/>
+                No. of 1kg Cakes <input type="text" id="medium" /><br /><br/>
+                No. of 2kg Cakes <input type="text" id="large" /><br /><br/>
+                Tip:
+                <label><input type="radio" value="10" name="tip" /> 10%</label>
+                <label><input type="radio" value="15" name="tip" checked="checked" /> 15%
+                </label> <label><input type="radio" value="20" name="tip" /> 20%</label> <br /><br/>
+                <button id="submit" onclick="q6();">Calculate Order</button>
+                <p>
+                Cost of order: <span id="price"></span>
+                <p>
+            </fieldset>
+        </div>
+    
+    
+        <br><br><a href="#" style="color: black; font-size: 10px">Go to top of page.</a>
+    </body>
+</html>
