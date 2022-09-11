@@ -1,0 +1,163 @@
+<!doctype html>
+<html>
+    <head>
+        <title>URK20CS3021_Exp6</title>
+        <meta charset = 'UTF8'>
+        <meta name = 'viewport' content="width = device-width, initial-scale = 1.0">
+        <style>
+            legend{
+                font-family:'Times New Roman', Times, serif; 
+                font-size: 32px;
+            }
+            a{
+                font-family:'Times New Roman', Times, serif; 
+                color: aliceblue;
+                text-decoration: none;
+                font-size: 24px;
+                text-align: center;
+                margin: 2%;
+                padding: 1% 2%;
+                border-radius: 10px;
+            }
+            a:active{
+                background-color: #FFFFFF70;
+                color: #310a0b;
+            }
+            img{
+                width: 100px;
+                height: 100px;
+            }
+            fieldset{
+                text-size: 24px;
+                height: 250px;
+                margin: 50px;
+            }
+        </style>
+    </head>
+
+    <body bgcolor="#EDDCD2">
+
+        <header style="background-color: #CB997E; padding:20px 5px;">
+            <CENTER>
+                <H1 style="color:aliceblue; font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; font-size: 30px;">EXPERIMENT 6</H1>
+                <a href="#q1">Question. 1</a>
+                <a href="#q2">Question. 2</a>
+                <a href="#q3">Question. 3</a>
+                <a href="#q4">Question. 4</a>
+                <a href="#q5">Question. 5</a>
+            </CENTER>
+        </header>
+
+       <div id="q1">
+            <fieldset>
+                <legend>Digital clock</legend>
+                <span id='time'></span>
+                <script>
+                //define function display
+                //call the time display function for every one second
+                setInterval('display()', 1000);
+                function display(){
+                    var d= new Date();
+                    document.getElementById("time").innerHTML = d.toLocaleTimeString();
+                }
+
+                </script>
+                
+            </fieldset>
+       </div>
+
+       <div id="q2">
+        <fieldset>
+            <legend>Dynamic background!</legend>
+            Watch the colour change every 2 seconds! 
+            <script>
+                setInterval(bg, 2000);
+                function bg(){
+                    //create random colors using rgb function
+                    var red = Math.floor(Math.random()*255);
+                    var blue = Math.floor(Math.random()*255);
+                    var green = Math.floor(Math.random()*255);
+                    var color = 'rgb('+red+','+green+','+blue+')';
+                    //change or set body background color
+                    document.getElementsByTagName('fieldset')[1].style.backgroundColor = color;
+                }
+            </script>
+        </fieldset>
+       </div>
+
+       <div id="q3">
+        <fieldset>
+            <legend>Change font size</legend>
+            <p id='para1' onmouseover='incSize()' onmouseout='decSize()'>
+                move cursor over me to zoom in...
+                </p>
+                <script>
+                function incSize(){
+                    document.getElementById('para1').style='font-size: 45px';}
+
+                function decSize(){
+                    document.getElementById('para1').style='font-size: 24px';}
+                </script>
+
+        </fieldset>
+       </div>
+
+       <div id="q4">
+        <fieldset>
+            <legend>Drive a car!</legend>
+        <img src="car.png" alt="This is a car." id = 'img'>
+        <br><br>
+        <button onclick="moveRight();">Move!</button>
+        <button onclick="stop();">Stop!</button>
+        <script>
+            function init()
+            {
+            imgObj = document.getElementById('img');
+            imgObj.style.position= 'relative'; imgObj.style.left = '0px';
+            }
+            function moveRight()
+            {
+            imgObj.style.left = parseInt(imgObj.style.left) + 1 + 'px';
+            animate = setTimeout('moveRight()',10); // call moveRight in 20msec
+            }
+            function stop()
+            {
+            clearTimeout(animate);
+            imgObj.style.left = '0px';
+            }
+            window.onload =init();
+        </script>
+        </fieldset>
+       </div>
+
+       <div id="q5">
+        <fieldset>
+            <legend>Students</legend>
+
+            <button onclick="q5();">Click to see info</button>
+            <p id="b42000">Born before 2000: </p><br>
+            <p id="af2000">Born after 2000: </p><br>
+            <script>
+                // Create an array of objects
+                var student = [ { name:'John', r_num:'123', dob:'20-apr-1995' }, { name:'Joseph',
+                r_num:'456', dob:'05-jan-1998' }, { name:'Smith', r_num:'124', dob:'20-apr-2001' }];
+                function q5(){
+                    //Iterate through an array
+                for (var i = 0; i < student.length; i++) {
+                //access property
+                if (parseInt(student[i].dob.slice(-4)) < 2000){
+                    document.getElementById("b42000").innerHTML += "<br>"+student[i].name + "'s Register number is: "+ student[i].r_num+"<br>"; //student[i].name;
+                }
+                else{
+                    document.getElementById("af2000").innerHTML += "<br>"+student[i].name + "'s Register number is: "+ student[i].r_num+"<br>"; //student[i].name;
+                }
+                
+                }
+                }
+            </script>
+
+            
+        </fieldset>
+       </div>
+    </body>
+</html>
