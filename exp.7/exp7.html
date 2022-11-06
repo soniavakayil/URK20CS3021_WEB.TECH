@@ -1,0 +1,316 @@
+<!doctype html>
+<html>
+    <head>
+        <title>URK20CS3021_Exp7</title>
+        <meta charset = 'UTF8'>
+        <meta name = 'viewport' content="width = device-width, initial-scale = 1.0">
+        <style>
+            legend{
+                font-family:'Times New Roman', Times, serif; 
+                font-size: 32px;
+                color: aliceblue;
+            }
+            a{
+                font-family:'Times New Roman', Times, serif; 
+                color: aliceblue;
+                text-decoration: none;
+                font-size: 24px;
+                text-align: center;
+                margin: 2%;
+                padding: 1% 2%;
+                border-radius: 10px;
+            }
+            a:hover{
+                background-color: #FFFFFF70;
+                color: #111111;
+            }
+            #q1 img{
+                width: 100px;
+                height: 100px;
+            }
+            #q1 div{
+                border-color: #FFFFFF;
+                border: dashed white;
+                border-width: 3px 0px;
+                padding: 20px;
+                height: 100px;
+                position: relative;
+            }
+            label{
+                font-family:'Times New Roman', Times, serif; 
+                color: aliceblue;
+                text-decoration: none;
+                font-size: 24px; 
+            }
+            button {
+                display: inline-block;
+                padding: 15px 20px;
+                font-size: 20px;
+                cursor: pointer;
+                text-align: center;
+                text-decoration: none;
+                outline: none;
+                color: #fff;
+                background-color: #999;
+                border: none;
+                border-radius: 15px;
+                margin: 10px;
+            }
+
+            #q2 div{
+                padding: 20px;
+                height: 250px;
+                position: relative;
+                font-family:'Times New Roman', Times, serif; 
+                color: aliceblue;
+                text-decoration: none;
+                font-size: 22px
+
+            }
+
+            #q3 div{
+                padding: 20px;
+                height: 375px;
+                position: relative;
+                font-family:'Times New Roman', Times, serif; 
+                color: aliceblue;
+                text-decoration: none;
+                font-size: 22px
+
+            }
+            .colors {
+                display: flex;
+                position: fixed;
+                bottom: 2em;
+                right: 2em;
+            }
+            .color {
+                height: 36px;
+                width: 36px;
+                margin-left: 0.5em;
+                border-radius: 18px;
+                box-shadow: 0px 4px 10px rgba(0,0,0,0.3);
+                border: 2px solid #aaa;
+                cursor: pointer;
+            }
+            
+            /* Colour picker css only */
+
+        </style>
+        
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+        <script>
+            $(document).ready(function(){
+                $('.car').hide();
+                // $("img").hide();
+
+                let no;
+                let check = 0;
+                var c = 0;
+
+                $("#cars").change (function () {  
+                    no = $(this).children("option:selected").val();
+                    console.log(i, typeof(i));
+                    if(check == 0){
+                        for(var i=1; i<=no;i++){
+                            $("#"+i.toString()+"").children("img").show();
+                            check=1;
+                        }
+                    }
+                    else{
+                        $("img").hide();
+                        for(var i=1; i<=no;i++){
+                            $("#"+i.toString()+"").children("img").show();
+                        }
+                    }
+                });
+
+                $("#go").click(function () {  
+                    $('#1').animate({left: '90vw'}, Math.floor(Math.random()*5000), function(){$('#1').fadeTo('fast', 0.15)});
+                    $('#2').animate({left: '90vw'}, Math.floor(Math.random()*5000), function(){$('#2').fadeTo('fast', 0.15)});
+                    $('#3').animate({left: '90vw'}, Math.floor(Math.random()*5000), function(){$('#3').fadeTo('fast', 0.15)});
+                    $('#4').animate({left: '90vw'}, Math.floor(Math.random()*5000), function(){$('#4').fadeTo('fast', 0.15)});
+                });
+
+                $("#re").click(function(){
+                    $(".track").css("left","0");
+                    $(".track").css("opacity","1");
+                });
+                               
+
+                /* function appendText() {
+                    var txt1 = "<p>Text.</p>";
+                    var txt2 = $("<p></p>").text("Text.");  
+                    var txt3 = document.createElement("p");
+                    txt3.innerHTML = "Text.";         
+                    $("body").append(txt1, txt2, txt3);
+                } */
+
+                
+
+                $("#form_but").click(function (){
+                    console.log("outsude: ", c)
+                    if (c % 2 != 0){
+                        $("#form").remove();
+                        $("#form_but").html("Already registered!")
+                    }else{
+                        $("#form").append("<br>")
+                        var fnamel = "<label>First name: </label>"
+                        var fname = document.createElement("input");
+                        fname.placeholder = "John"
+                        fname.id = 'first_name' 
+                        $("#form").append(fnamel, fname); 
+
+                        var lnamel = "<label>Last name: </label>"
+                        var lname = document.createElement("input");
+                        lname.placeholder = "Doe"
+                        lname.id = 'last_name' 
+                        $("#form").append(lnamel, lname); 
+
+                        var phnol = "<label>Phone number: </label>"
+                        var phno = document.createElement("input");
+                        phno.placeholder = "9876543210"
+                        $("#form").append(phnol, phno); 
+
+                        var maill = "<label>Email: </label>"
+                        var mail = document.createElement("input");
+                        mail.type = "email"
+                        mail.placeholder = "john@email.com"
+                        $("#form").append(maill, mail); 
+                
+                        $("#form").append("<button>submit</button>"); 
+
+                        $("#form").on("click", "button", function(){
+                            alert("Registered for upcoming race!");
+                            $("#form").children('input').each(function () {
+                                $("#form").append("<br>", this.value);
+                            });
+                            c+=1;
+                        })
+                    }
+
+                });
+
+
+                // Colour picker JS only
+
+                // Reference of base image with paint watermark
+                const base = "https://ddools.imgix.net/cars/base.png?w=600&mark-align=center,middle&mark=https%3A%2F%2Fddools.imgix.net%2Fcars%2Fpaint.png%3Fw%3D600%26bri%3D-18%26con%3D26%26monochrome%3D"
+
+                // Click on a color
+                var el = document.getElementsByClassName("color");
+                for (var i = 0; i < el.length; i++) {
+                el[i].onclick = changeColor;
+                }
+
+                function changeColor(e) {
+                // get the hex color
+                let hex = e.target.getAttribute("data-hex");
+                // updated url
+                let updateColor = base + hex;
+                // update src of image
+                document.getElementById("productImage").src = updateColor;
+
+                
+                }
+
+                //http://jscolor.com
+                //Custom colourpicker
+                function update(jscolor) {
+                let updateColor = base + jscolor;
+                    // Use 'jscolor' instance for car color
+                    document.getElementById("productImage").src = updateColor;
+                }
+
+            });            
+
+
+        </script>
+        
+    </head>
+
+    <body style="background-color: #B0A6A4 ;">
+
+        <header style="background-color: #3C4258; padding:20px 5px;">
+            <CENTER>
+                <H1 style="color:#FFFFFF; font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; font-size: 30px;">EXPERIMENT 7</H1>
+                <a href="#q1">Question. 1</a>
+                <a href="#q2">Question. 2</a>
+                <a href="#q3">Question. 3</a>
+            </CENTER>
+        </header>
+
+        <div id="q1">
+            <fieldset style="background-color: #2C2D31;">
+                <legend>WELCOME TO THE RACES!</legend>
+                <label for="cars">Choose no. of cars:</label>
+                <select name="cars" id="cars">
+                    <option value="0">0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                </select>
+                <div>
+                    <div id="1" style="border: None;" class="track"><img src="car1.png" alt="Car 1" class="car"></div>
+                </div>
+                <div>
+                    <div id="2" style="border: None;" class="track"><img src="car2.png" alt="Car 2" class="car"></div>
+                </div>
+                <div>
+                    <div id="3" style="border: None;" class="track"><img src="car3.png" alt="Car 3" class="car"></div>
+                </div>
+                <div>
+                    <div id="4" style="border: None;" class="track"><img src="car4.png" alt="Car 4" class="car"></div>
+                </div>
+
+
+                <button id="go">Go!</button>
+                <button id="re">Reset.</button>
+
+            </fieldset>
+        </div>
+        <br><br><br>
+
+        <div id="q2">
+            <fieldset style="background-color: #443C58;">
+                <legend>JOIN US LIVE!</legend>
+                <div>
+                    <center>
+                        If n people attending - click button n times:
+                        <br>
+                        <button id="form_but">Click to register!</button>
+                        <p id="form"></p>
+                    </center>
+                </div>
+                
+
+            </fieldset>
+        </div>
+
+
+        <br><br><br>
+        <div id="q3">
+            <fieldset>
+                <legend>Choose your car!</legend>
+
+                <div>
+                    <div class="colors">
+                        <div class="color" style="background-color: #000000" data-hex="000000" ></div>
+                        <div class="color" style="background-color: #0d4671" data-hex="0d4671" ></div>
+                        <div class="color" style="background-color: #63803a" data-hex="63803a" ></div>
+                        <div class="color" style="background-color: #841210" data-hex="841210" ></div>
+                        <div class="color" style="background-color: #a09e9f" data-hex="none" ></div>
+                    <div>
+                        <img id="productImage" src="base.png" alt="my base image" />
+                    </div>
+                </div>
+                
+            </fieldset>
+        </div>
+
+       
+    </body>
+</html>
+
