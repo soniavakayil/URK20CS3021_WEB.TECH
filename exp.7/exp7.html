@@ -151,7 +151,7 @@
 
                 $("#form_but").click(function (){
                     console.log("outsude: ", c)
-                    if (c % 2 != 0){
+                    if (c != 0){
                         $("#form").remove();
                         $("#form_but").html("Already registered!")
                     }else{
@@ -278,7 +278,6 @@
                 <legend>JOIN US LIVE!</legend>
                 <div>
                     <center>
-                        If n people attending - click button n times:
                         <br>
                         <button id="form_but">Click to register!</button>
                         <p id="form"></p>
