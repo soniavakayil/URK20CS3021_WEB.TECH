@@ -1,0 +1,86 @@
+<!doctype html>
+<html>
+    <head>
+        <title>exp.8b</title>
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
+        <style>
+            legend{
+                font-family:'Times New Roman', Times, serif; 
+                font-size: 32px;
+                color: #2a4747;
+            }
+            a{
+                font-family:'Times New Roman', Times, serif; 
+                color: aliceblue;
+                text-decoration: none;
+                font-size: 20px;
+                text-align: center;
+                margin: 0 35px;
+                padding: 1% 2%;
+                border-radius: 10px;
+            }
+            a:hover{
+                background-color: #FFFFFF70;
+                color: #111111;
+            }
+            
+            #q3 div{
+                border-top: #FFFFFF;
+                border-top-style: dashed;
+                padding: 5px;
+                height: 400px;
+                position: relative;
+                color: aliceblue;
+                font-size: 24px;
+            }
+            button {
+                display: inline-block;
+                padding: 15px 20px;
+                font-size: 20px;
+                cursor: pointer;
+                text-align: center;
+                text-decoration: none;
+                outline: none;
+                color: #fff;
+                background-color: #bfcc94;
+                border: none;
+                border-radius: 15px;
+                margin: 10px;
+            }
+
+        </style>
+    
+    </head>
+
+    <body style="background-color: 	#f0f4ef ;" id="q3">
+        <header style="background-color: #bfcc94; padding:20px 5px;">
+            <CENTER>
+                <H1 style="color:#FFFFFF; font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; font-size: 30px;">EXPERIMENT 8</H1>
+                <a href="exp8.html">Question. 1</a>
+                <a href="exp.8b.html">Question. 2</a>
+                <a href="#q3">Question. 3</a>
+            </CENTER>
+        </header>
+        <fieldset style="background-color: #607466;">
+            <legend>Simple to-do list</legend>
+    
+            <script>
+                angular.module('todoApp', [])
+                    .controller('todoController', function($scope){
+                        $scope.tasks = [];
+                        $scope.add = function() {
+                            $scope.tasks.push($scope.title);
+                        }
+                    })
+                </script>
+                <div ng-app="todoApp" ng-controller="todoController">
+                    <input ng-model="title"><button ng-click="add()">Add</button>
+                    <ul>
+                        <li ng-repeat="t in tasks">{{ t }}</li>
+                    </ul>
+                </div>                
+    
+    
+        </fieldset>
+    </body>
+</html>

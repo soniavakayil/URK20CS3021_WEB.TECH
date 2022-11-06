@@ -1,0 +1,110 @@
+<!doctype HTML>
+<HTML>
+    <HEAD>
+        <meta charset = 'UTF8'>
+        <meta name = 'viewport' content="width = device-width, initial-scale = 1.0">
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
+        <TITle>Exp.8</TITle>
+
+        <style>
+            legend{
+                font-family:'Times New Roman', Times, serif; 
+                font-size: 32px;
+                color: #2a4747;
+            }
+            a{
+                font-family:'Times New Roman', Times, serif; 
+                color: aliceblue;
+                text-decoration: none;
+                font-size: 20px;
+                text-align: center;
+                margin: 0 35px;
+                padding: 1% 2%;
+                border-radius: 10px;
+            }
+            a:hover{
+                background-color: #FFFFFF70;
+                color: #111111;
+            }
+            
+            #q1 div{
+                border-top: #FFFFFF;
+                border-top-style: dashed;
+                padding: 5px
+                height: 400px;
+                position: relative;
+                color: aliceblue;
+                font-size: 24px;
+            }
+            button {
+                display: inline-block;
+                padding: 15px 20px;
+                font-size: 20px;
+                cursor: pointer;
+                text-align: center;
+                text-decoration: none;
+                outline: none;
+                color: #fff;
+                background-color: #bfcc94;
+                border: none;
+                border-radius: 15px;
+                margin: 10px;
+            }
+
+        </style>
+    </HEAD>
+
+    <body ng-app = '' style="background-color: 	#f0f4ef ;">
+        <header style="background-color: #bfcc94; padding:20px 5px;">
+            <CENTER>
+                <H1 style="color:#FFFFFF; font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; font-size: 30px;">EXPERIMENT 8</H1>
+                <a href="#q1">Question. 1</a>
+                <a href="exp.8b.html">Question. 2</a>
+                <a href="exp.8c.html">Question. 3</a>
+            </CENTER>
+        </header>
+
+        <!-- script -->
+        <script type="text/javascript">
+            function FrmController($scope) {
+                $scope.comment = [];
+                $scope.btn_add = function() {
+                    if($scope.txtcomment != null){
+                        $scope.comment.push($scope.txtcomment);
+                        $scope.txtcomment = "";
+                    }
+                }
+                $scope.remItem = function($index) {
+                    $scope.comment.splice($index, 1);
+                }
+            }
+
+            
+        </script>
+
+        <div id="q1">
+            <fieldset style="background-color: #607466;">
+                <legend>COMMENT SECTION</legend>
+                <div>
+                    <h4>Post your Comment</h4>
+                    <form ng-controller="FrmController">
+                        <textarea ng-model="txtcomment" placeholder="Your Comment" style='width:550px'></textarea><br>
+                        <button ng-click='btn_add();' style='margin-top:10px;'>Post Comment</button>
+                        <h4>Comments</h4>
+                        <div>
+                            <ul>
+                                <li ng-repeat="comnt in comment"> {{ comnt }} 
+                                <a style="right: 10% ; color: #fff;" href="" ng-click="remItem($index)">Delete comment</a></li>
+                            </ul>
+                        </div>
+                    </form>
+                </div>
+            </fieldset>
+        </div>
+
+        <br><br><br>
+
+        
+        
+    </body>
+</HTML>
