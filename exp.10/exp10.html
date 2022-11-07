@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exp.10</title>
+
+    <style>
+        legend{
+            font-family:'Times New Roman', Times, serif; 
+            font-size: 32px;
+            color: #2a4747;
+        }
+        a{
+            font-family:'Times New Roman', Times, serif; 
+            color: aliceblue;
+            text-decoration: none;
+            font-size: 20px;
+            text-align: center;
+            margin: 0 35px;
+            padding: 1% 2%;
+            border-radius: 10px;
+        }
+        a:hover{
+            background-color: #FFFFFF70;
+            color: #111111;
+        }
+        
+        label{
+            padding: 5px;
+            height: 400px;
+            position: relative;
+            color: #581845 ;
+            margin: 50px 0px;
+            font-size: 24px;
+        }
+        button {
+            display: inline-block;
+            padding: 15px 20px;
+            font-size: 20px;
+            cursor: pointer;
+            text-align: center;
+            text-decoration: none;
+            outline: none;
+            color: #fff;
+            background-color: #DE3163;
+            border: none;
+            border-radius: 15px;
+            margin: 10px;
+        }
+
+    </style>
+</head>
+<body>
+    <body>
+        <header style="background-color: #DE3163; padding:20px 5px;">
+            <CENTER>
+                <H1 style="color:#FFFFFF; font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; font-size: 30px;">MEGAPLAY 2022 REGISTRATION FORM</H1>
+            </CENTER>
+        </header>
+        <form action="/form" method="post">
+            <br>
+            <label for="name">Name: </label>
+            <input type="text" name="name" id="name">
+            <br><br>
+            <label for="reg">RegNo: </label>
+            <input type="text" name="reg" id="reg">
+            <br><br>
+            <label for="year">Year of Study: </label>
+            <input type="text" name="year" id="year">
+            <br><br>
+            <label for="dept">Department: </label>
+            <select name="dept">
+            <option value="CSE">CSE</option>
+            <option value="ECE">ECE</option>
+            <option value="EEE">EEE</option>
+            <option value="Media">Media</option>
+            <option value="Mechanical">Mechanical</option>
+            <option value="Agriculture">Agriculture</option>
+            </select>
+            <br><br>
+            <label for="school">School: </label>
+            <select name="school">
+            <option value="School of Engineering">School of Engineering</option>
+            <option value="School of Agriculture and Biosciences">School of Agriculture and
+            Biosciences</option>
+            <option value="School of Management Studies">School of Management
+            Studies</option>
+            </select>
+            <br><br>
+            <label for="event">Type of Event: </label>
+            <br><br>
+            <input type="checkbox" name="event" value="Musician"> Musician
+            <input type="checkbox" name="event" value="Singing"> Singing
+            <input type="checkbox" name="event" value="Choreography"> Choreography
+            <input type="checkbox" name="event" value="Backstage"> Backstage
+            <input type="checkbox" name="event" value="Finance"> Finance
+            <input type="checkbox" name="event" value="Purchase"> Purchase
+            <input type="checkbox" name="event" value="Volunteer"> Volunteer
+            <br><br>
+            <CENter>
+                <button type="submit">Submit</button>
+            </CENter>
+            <br><br>
+        </form>
+        <br><br>
+    </body>
+</body>
+</html>
