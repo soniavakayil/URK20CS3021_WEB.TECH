@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+    <HEAD>
+        <meta charset = 'UTF8'>
+        <meta name = 'viewport' content="width = device-width, initial-scale = 1.0">
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
+        <TITle>Exp.9</TITle>
+
+        <style>
+            legend{
+                font-family:'Times New Roman', Times, serif; 
+                font-size: 32px;
+                color: #2a4747;
+            }
+            a{
+                font-family:'Times New Roman', Times, serif; 
+                color: aliceblue;
+                text-decoration: none;
+                font-size: 20px;
+                text-align: center;
+                margin: 0 35px;
+                padding: 1% 2%;
+                border-radius: 10px;
+            }
+            a:hover{
+                background-color: #FFFFFF70;
+                color: #111111;
+            }
+            
+            #q1 div{
+                border-top: #FFFFFF;
+                border-top-style: dashed;
+                padding: 5px;
+                height: 400px;
+                position: relative;
+                color: aliceblue;
+                font-size: 24px;
+            }
+
+        </style>
+    </HEAD>
+    
+    
+    <body style="background-color:  #b3cde0 ;">
+        <header style="background-color: #6497b1; padding:20px 5px;">
+            <CENTER>
+                <H1 style="color:#FFFFFF; font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; font-size: 30px;">EXPERIMENT 9</H1>
+                <a href="#q1">Question. 1</a>
+                <a href="exp9b.html">Question. 2</a>
+            </CENTER>
+        </header>
+
+        <form ng-app="myApp" ng-controller="validateCtrl" name="myForm" novalidate>
+
+        <p>Username:<br>
+        <input type="text" name="user" ng-model="user" required>
+        <span style="color:red" ng-show="myForm.user.$dirty && myForm.user.$invalid">
+        <span ng-show="myForm.user.$error.required">Username is required.</span>
+        </span>
+        </p>
+
+        <p>Email:<br>
+        <input type="email" name="email" ng-model="email" required>
+        <span style="color:red" ng-show="myForm.email.$dirty && myForm.email.$invalid">
+        <span ng-show="myForm.email.$error.required">Email is required.</span>
+        <span ng-show="myForm.email.$error.email">Invalid email address.</span>
+        </span>
+        </p>
+
+        <p>Password:<br>
+            <input type="password" name="password" ng-model="password" required>
+            <span style="color:red" ng-show="myForm.password.$dirty">
+            <span ng-show="myForm.password.$error.required">Password is required.</span>
+            </span>
+        </p>
+
+        <p>
+            <input type="submit" ng-disabled="myForm.user.$invalid || myForm.email.$invalid || myForm.password.$error.required">
+            </p>
+
+        </form>
+
+        <script>
+        var app = angular.module('myApp', []);
+        app.controller('validateCtrl', function($scope) {
+            $scope.user = 'John Doe';
+            $scope.email = 'john.doe@gmail.com';
+        });
+
+
+        </script>
+    </body>
+
+</html>

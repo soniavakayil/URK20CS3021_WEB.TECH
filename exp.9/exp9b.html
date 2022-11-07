@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>
+    
+    <meta charset = 'UTF8'>
+        <meta name = 'viewport' content="width = device-width, initial-scale = 1.0">
+        <!-- <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script> -->
+        <TITle>Exp.9</TITle>
+
+        <style>
+            legend{
+                font-family:'Times New Roman', Times, serif; 
+                font-size: 32px;
+                color: #2a4747;
+            }
+            a{
+                font-family:'Times New Roman', Times, serif; 
+                color: aliceblue;
+                text-decoration: none;
+                font-size: 20px;
+                text-align: center;
+                margin: 0 35px;
+                padding: 1% 2%;
+                border-radius: 10px;
+            }
+            a:hover{
+                background-color: #FFFFFF70;
+                color: #111111;
+            }
+            
+            #q1 div{
+                border-top: #FFFFFF;
+                border-top-style: dashed;
+                padding: 5px;
+                height: 400px;
+                position: relative;
+                color: aliceblue;
+                font-size: 24px;
+            }
+
+        </style>
+
+    <script>
+        var app = angular.module("myapp",['ngRoute']);
+        app.config(function($routeProvider){
+            $routeProvider.when('/1',{
+                               templateUrl:'1.html'
+                            })
+                          .when('/2',{
+                                templateUrl:'2.html'
+                            })
+                            .when('/3',{
+                                templateUrl:'3.html'
+                            })
+                            .when('/4',{
+                                templateUrl:'4.html'
+                            })
+                            .when('/5',{
+                                templateUrl:'5.html'
+                            })
+        })
+    </script>
+</head>
+<body ng-app="myapp" style="background-color:  #b3cde0;">
+        <header style="background-color: #6497b1; padding:20px 5px;">
+            <CENTER>
+                <H1 style="color:#FFFFFF; font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; font-size: 30px;">EXPERIMENT 9</H1>
+                <a href="#exp9.html">Question. 1</a>
+                <a href="#">Question. 2</a>
+            </CENTER>
+        </header>
+    <h1>STUDENT PROFILES</h1>
+    <div>
+        <a href="#!1">URK20CS121</a>
+        <a href="#!2">URK20CS122</a>
+        <a href="#!3">URK20CS123</a>
+        <a href="#!4">URK20CS124</a>
+        <a href="#!5">URK20CS125</a>
+
+    </div>
+    <div>
+        <div ng-view></div>
+    </div>
+</body>
+</html>
